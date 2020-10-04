@@ -1,0 +1,52 @@
+Использование как System.out, только вместо out величина (время, масса, длина)
+SI.Length
+SI.Mass
+SI.Prefix
+
+Применение приставок СИ к значениям
+
+double massKilogram = 5.8;
+double massGram = SI.Prefix.KiloToNonePrefix(massKilogram); // 5800
+double massMilliGram = SI.Prefix.KiloToMilli(massKilogram); // 5800000
+
+Перевод из разных единиц измерения внутри величин
+
+double massKilogram = 5.8;
+double massPound = SI.Mass.KilogramToPound(mass); // 12.78681108
+double massTonne = SI.Mass.KilogramToTonne(massKilogram); // 0.0058
+
+=============================================
+=============================================
+
+А лучше объявить типы данных
+Mass.Kilogram()
+Mass.Tonne()
+Time.Second()
+
+Применение приставок СИ к значениям
+
+Mass.Kilogram massKilogram = 5.8;
+Mass.Gram massGram = massKilogram.toNonePrefix(); // 5800
+Mass.MilliGram massMilliGram = massKilogram.toMilli(); // 5800000
+
+Перевод из разных единиц измерения внутри величин
+
+Mass.Kilogram massKilogram = 5.8;
+Mass.Pound massPound = massKilogram.toPound(); // 12.78681108
+Mass.Tonne massTonne = massKilogram.toTonne(); // 0.0058
+
+для перевода внутри величин добавить метод Перевести в СИ (ToSI) для перевода в килограммы, секунды, метры и т.д.
+
+=============================================
+=============================================
+
+Перевод из разных единиц измерения внутри величин
+Время (секунды, минуты, часы) (конвертация в Date)
+Длина (метрическая система, британская система, морская система) (https://ru.wikipedia.org/wiki/Длина)
+Масса (килограмм, фунт, карат, унция, тонна) (https://ru.wikipedia.org/wiki/Масса#Единицы_измерения_массы)
+Сила тока (амперы)
+Температура (кельвин, цельсия, фаренгейт) (https://ru.wikipedia.org/wiki/Температура#Переходы_из_разных_шкал)
+Количество вещества (моль)
+Сила света (кандела)
+
+Формулы перевода между величинами
