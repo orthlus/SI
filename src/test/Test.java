@@ -9,10 +9,13 @@ import java.util.Scanner;
  */
 public class Test {
     public static void main(String[] args) {
+        /*табличное значение*/
         double densityPetrol = 0.7;
-        double mass = new Scanner(System.in).nextDouble();
+        /*входное значение калькулятора*/
+//        double mass = new Scanner(System.in).nextDouble();
+        double mass = 500.09;
         Mass.Pound m = new Mass.Pound(mass);
-        System.out.println(densityPetrol * m.toKilogram().getValue());
+        System.out.println("Объем " + mass + " фунтов бензина равен " + densityPetrol * m.toKilogram().getValue());
 
     }
 }
