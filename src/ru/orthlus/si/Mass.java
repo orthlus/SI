@@ -6,97 +6,26 @@ import java.util.ArrayList;
  * Library for transformation operations in International System of Units
  */
 public abstract class Mass {
-    public static class Kilogram {
-        private double value;
-        private Prefix prefix;
-
-        public double getValue() {
-            return value;
-        }
-
+    public static class Kilogram extends AbstractMeasure {
         public Kilogram(double value) {
-            this.value = value;
-            this.prefix = Prefix.KILO;
-        }
-        public Kilogram(double value, Prefix prefix) {
-            this.value = value;
-            this.prefix = prefix;
+            super(value, Prefix.KILO);
         }
     }
 
-    public static class Gram {
-        private double value;
-        private Prefix prefix;
-
-        public double getValue() {
-            return value;
-        }
-
-        public Gram(double value) {
-            this.value = value;
-            this.prefix = Prefix.NonePrefix;
-        }
-        public Gram(double value, Prefix prefix) {
-            this.value = value;
-            this.prefix = prefix;
-        }
+    public static class Gram extends AbstractMeasure {
     }
 
-    public static class MilliGram {
-        private double value;
-        private Prefix prefix;
+    public static class MilliGram extends AbstractMeasure {
 
-        public double getValue() {
-            return value;
-        }
-
-        public MilliGram(double value) {
-            this.value = value;
-            this.prefix = Prefix.NonePrefix;
-        }
-        public MilliGram(double value, Prefix prefix) {
-            this.value = value;
-            this.prefix = prefix;
-        }
     }
 
-    public static class Tonne {
-        private double value;
-        private Prefix prefix;
+    public static class Tonne extends AbstractMeasure {
 
-        public double getValue() {
-            return value;
-        }
-
-        public Tonne(double value) {
-            this.value = value;
-            this.prefix = Prefix.NonePrefix;
-        }
-        public Tonne(double value, Prefix prefix) {
-            this.value = value;
-            this.prefix = prefix;
-        }
     }
 
-    public static class Pound {
-        private double value;
-        private Prefix prefix;
-
-        public double getValue() {
-            return value;
-        }
-
-        public Pound(double value) {
-            this.value = value;
-            this.prefix = Prefix.NonePrefix;
-        }
-        public Pound(double value, Prefix prefix) {
-            this.value = value;
-            this.prefix = prefix;
-        }
-
+    public static class Pound extends AbstractMeasure {
         public Kilogram toKilogram() {
-            return new Kilogram(this.value * 0.4535923745);
+            return new Kilogram(this.getValue() * 0.4535923745);
         }
     }
 }
