@@ -18,5 +18,8 @@ public class Test {
         Mass.Pound m = new Mass.Pound(mass);
         System.out.println("Объем " + mass + " фунтов бензина равен " + densityPetrol * m.toKilogram().getValue());
 
+        Prefix prefix = Prefix.KILO;
+        System.out.println(Prefix.DECA.equals(prefix));
+
     }
 }

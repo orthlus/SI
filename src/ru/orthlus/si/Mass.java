@@ -11,9 +11,11 @@ public abstract class Mass {
             super(value, Prefix.KILO);
         }
 
+        /* //для килограмма недоступен конструктор с префиксом, т.к. сам килограм уже с префиксом
         public Kilogram(double value, Prefix prefix) {
             super(value, prefix);
         }
+        */
     }
 
     public static class Gram extends AbstractMeasure {
@@ -22,17 +24,6 @@ public abstract class Mass {
         }
 
         public Gram(double value, Prefix prefix) {
-            super(value, prefix);
-        }
-    }
-
-    public static class MilliGram extends AbstractMeasure {
-
-        public MilliGram(double value) {
-            super(value);
-        }
-
-        public MilliGram(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
