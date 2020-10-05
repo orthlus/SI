@@ -6,7 +6,7 @@ package ru.orthlus.si;
  */
 public abstract class Mass {
     public static Kilogram toSI(AbstractMeasureToSI a) {
-        return new Kilogram(a.getValueForToSI() * a.get_IN_KILOGRAMS());
+        return new Kilogram(a.getValue() * a.get_IN_KILOGRAMS());
     }
 
     public static class Kilogram extends AbstractMeasure {
@@ -32,11 +32,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -51,11 +46,6 @@ public abstract class Mass {
 
         public Tonne(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
@@ -76,11 +66,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -95,11 +80,6 @@ public abstract class Mass {
 
         public Centner(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
@@ -120,11 +100,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -142,11 +117,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -161,11 +131,6 @@ public abstract class Mass {
 
         public Stone(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
@@ -189,11 +154,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -211,11 +171,6 @@ public abstract class Mass {
 
         public SolarMass(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
@@ -239,11 +194,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -261,11 +211,6 @@ public abstract class Mass {
 
         public ElectronMass(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
@@ -289,11 +234,6 @@ public abstract class Mass {
         }
 
         @Override
-        public double getValueForToSI() {
-            return this.getValue();
-        }
-
-        @Override
         public double get_IN_KILOGRAMS() {
             return IN_KILOGRAMS;
         }
@@ -311,11 +251,6 @@ public abstract class Mass {
 
         public PlanckMass(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double getValueForToSI() {
-            return this.getValue();
         }
 
         @Override
