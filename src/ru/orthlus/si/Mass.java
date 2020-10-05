@@ -22,6 +22,8 @@ public abstract class Mass {
     }
 
     public static class Gram extends AbstractMeasure implements AbstractMeasureToSI {
+        public final double KILOGRAMS_IN_GRAM = 0.001;
+
         public Gram(double value) {
             super(value);
         }
@@ -32,11 +34,12 @@ public abstract class Mass {
 
         @Override
         public Kilogram toKilogram() {
-            return new Kilogram(getValue() / 1000);
+            return new Kilogram(this.getValue() * KILOGRAMS_IN_GRAM);
         }
     }
 
     public static class Tonne extends AbstractMeasure implements AbstractMeasureToSI {
+        public final double KILOGRAMS_IN_TONNE = 1000;
 
         public Tonne(double value) {
             super(value);
@@ -48,7 +51,7 @@ public abstract class Mass {
 
         @Override
         public Kilogram toKilogram() {
-            return new Kilogram(getValue() * 1000);
+            return new Kilogram(this.getValue() * KILOGRAMS_IN_TONNE);
         }
     }
 
