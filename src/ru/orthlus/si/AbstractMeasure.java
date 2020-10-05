@@ -1,11 +1,17 @@
 package ru.orthlus.si;
 
+import java.math.BigDecimal;
+
 public abstract class AbstractMeasure {
     private double value;
+    private BigDecimal valueBigDecimal;
     private Prefix prefix;
 
     public double getValue() {
-        return valuePowerByPrefix();
+        return valuePowerByPrefix(this.value);
+    }
+    public BigDecimal getValueBigDecimal() {
+        return valuePowerByPrefix(this.valueBigDecimal);
     }
 
     public Prefix getPrefix() {
@@ -26,28 +32,61 @@ public abstract class AbstractMeasure {
         this.prefix = prefix;
     }
 
-    private double valuePowerByPrefix() {
-        if (Prefix.NonePrefix.equals(prefix)) return value;
-        else if (Prefix.DECA.equals(prefix)) return value * 10;
-        else if (Prefix.HECTO.equals(prefix)) return value * 100;
-        else if (Prefix.KILO.equals(prefix)) return value * 1000;
-        else if (Prefix.MEGA.equals(prefix)) return value * Math.pow(10, 6);
-        else if (Prefix.GIGA.equals(prefix)) return value * Math.pow(10, 9);
-        else if (Prefix.TERA.equals(prefix)) return value * Math.pow(10, 12);
-        else if (Prefix.PETA.equals(prefix)) return value * Math.pow(10, 15);
-        else if (Prefix.EXA.equals(prefix)) return value * Math.pow(10, 18);
-        else if (Prefix.ZETTA.equals(prefix)) return value * Math.pow(10, 21);
-        else if (Prefix.YOTTA.equals(prefix)) return value * Math.pow(10, 24);
-        else if (Prefix.DECI.equals(prefix)) return value * Math.pow(10, -1);
-        else if (Prefix.CENTI.equals(prefix)) return value * Math.pow(10, -2);
-        else if (Prefix.MILLI.equals(prefix)) return value * Math.pow(10, -3);
-        else if (Prefix.MICRO.equals(prefix)) return value * Math.pow(10, -6);
-        else if (Prefix.NANO.equals(prefix)) return value * Math.pow(10, -9);
-        else if (Prefix.PICO.equals(prefix)) return value * Math.pow(10, -12);
-        else if (Prefix.FEMTO.equals(prefix)) return value * Math.pow(10, -15);
-        else if (Prefix.ATTO.equals(prefix)) return value * Math.pow(10, -18);
-        else if (Prefix.ZEPTO.equals(prefix)) return value * Math.pow(10, -21);
-        return value;
+    public AbstractMeasure(BigDecimal value) {
+        this.valueBigDecimal = value;
+        this.prefix = Prefix.NonePrefix;
+    }
+
+    public AbstractMeasure(BigDecimal value, Prefix prefix) {
+        this.valueBigDecimal = value;
+        this.prefix = prefix;
+    }
+
+    private double valuePowerByPrefix(double a) {
+        if (Prefix.NonePrefix.equals(prefix)) return a;
+        else if (Prefix.DECA.equals(prefix)) return a * 10;
+        else if (Prefix.HECTO.equals(prefix)) return a * 100;
+        else if (Prefix.KILO.equals(prefix)) return a * 1000;
+        else if (Prefix.MEGA.equals(prefix)) return a * Math.pow(10, 6);
+        else if (Prefix.GIGA.equals(prefix)) return a * Math.pow(10, 9);
+        else if (Prefix.TERA.equals(prefix)) return a * Math.pow(10, 12);
+        else if (Prefix.PETA.equals(prefix)) return a * Math.pow(10, 15);
+        else if (Prefix.EXA.equals(prefix)) return a * Math.pow(10, 18);
+        else if (Prefix.ZETTA.equals(prefix)) return a * Math.pow(10, 21);
+        else if (Prefix.YOTTA.equals(prefix)) return a * Math.pow(10, 24);
+        else if (Prefix.DECI.equals(prefix)) return a * Math.pow(10, -1);
+        else if (Prefix.CENTI.equals(prefix)) return a * Math.pow(10, -2);
+        else if (Prefix.MILLI.equals(prefix)) return a * Math.pow(10, -3);
+        else if (Prefix.MICRO.equals(prefix)) return a * Math.pow(10, -6);
+        else if (Prefix.NANO.equals(prefix)) return a * Math.pow(10, -9);
+        else if (Prefix.PICO.equals(prefix)) return a * Math.pow(10, -12);
+        else if (Prefix.FEMTO.equals(prefix)) return a * Math.pow(10, -15);
+        else if (Prefix.ATTO.equals(prefix)) return a * Math.pow(10, -18);
+        else if (Prefix.ZEPTO.equals(prefix)) return a * Math.pow(10, -21);
+        return a;
+    }
+    private BigDecimal valuePowerByPrefix(BigDecimal a) {
+        if (Prefix.NonePrefix.equals(prefix)) return a;
+        else if (Prefix.DECA.equals(prefix)) return a.multiply(new BigDecimal(10));
+        else if (Prefix.HECTO.equals(prefix)) return a.multiply(new BigDecimal(100));
+        else if (Prefix.KILO.equals(prefix)) return a.multiply(new BigDecimal(1000));
+        else if (Prefix.MEGA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 6)));
+        else if (Prefix.GIGA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 9)));
+        else if (Prefix.TERA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 12)));
+        else if (Prefix.PETA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 15)));
+        else if (Prefix.EXA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 18)));
+        else if (Prefix.ZETTA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 21)));
+        else if (Prefix.YOTTA.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 24)));
+        else if (Prefix.DECI.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -1)));
+        else if (Prefix.CENTI.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -2)));
+        else if (Prefix.MILLI.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -3)));
+        else if (Prefix.MICRO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -6)));
+        else if (Prefix.NANO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -9)));
+        else if (Prefix.PICO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -12)));
+        else if (Prefix.FEMTO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -15)));
+        else if (Prefix.ATTO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -18)));
+        else if (Prefix.ZEPTO.equals(prefix)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -21)));
+        return a;
     }
 
 }
