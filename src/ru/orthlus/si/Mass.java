@@ -1,13 +1,12 @@
 package ru.orthlus.si;
 
-import java.util.ArrayList;
 
 /**
  * Library for transformation operations in International System of Units
  */
 public abstract class Mass {
     public static Kilogram toSI(AbstractMeasureToSI a) {
-        return a.toKilogram();
+        return new Kilogram(a.getValueForToSI() * a.get_IN_KILOGRAMS());
     }
 
     public static class Kilogram extends AbstractMeasure {
@@ -22,7 +21,7 @@ public abstract class Mass {
     }
 
     public static class Gram extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_GRAM = 0.001;
+        public final double IN_KILOGRAMS = 0.001;
 
         public Gram(double value) {
             super(value);
@@ -33,13 +32,18 @@ public abstract class Mass {
         }
 
         @Override
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_GRAM);
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
     public static class Tonne extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_TONNE = 1000;
+        public final double IN_KILOGRAMS = 1000;
 
         public Tonne(double value) {
             super(value);
@@ -50,13 +54,18 @@ public abstract class Mass {
         }
 
         @Override
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_TONNE);
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
     public static class Pound extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_POUND = 0.4535923745;
+        public final double IN_KILOGRAMS = 0.4535923745;
 
         public Pound(double value) {
             super(value);
@@ -66,12 +75,19 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_POUND);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
+
     public static class Centner extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_CENTNER = 100;
+        public final double IN_KILOGRAMS = 100;
 
         public Centner(double value) {
             super(value);
@@ -81,12 +97,19 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_CENTNER);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
+
     public static class Carat extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_CARAT = 0.0002;
+        public final double IN_KILOGRAMS = 0.0002;
 
         public Carat(double value) {
             super(value);
@@ -96,12 +119,19 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_CARAT);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
+
     public static class Ounce extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_OUNCE = 0.031_103_48;
+        public final double IN_KILOGRAMS = 0.031_103_48;
 
         public Ounce(double value) {
             super(value);
@@ -111,12 +141,19 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_OUNCE);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
+
     public static class Stone extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_STONE = 6.350_293_18;
+        public final double IN_KILOGRAMS = 6.350_293_18;
 
         public Stone(double value) {
             super(value);
@@ -126,8 +163,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_STONE);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -135,7 +178,7 @@ public abstract class Mass {
      * unified atomic mass unit
      */
     public static class Dalton extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_DALTON = 1.660_539_066_60E-27;
+        public final double IN_KILOGRAMS = 1.660_539_066_60E-27;
 
         public Dalton(double value) {
             super(value);
@@ -145,8 +188,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_DALTON);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -154,7 +203,7 @@ public abstract class Mass {
      * The solar mass (M☉) is a standard unit of mass in astronomy, equal to approximately 2×1030 kg.
      */
     public static class SolarMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_SOLAR_MASS = 1.988_47E+30;
+        public final double IN_KILOGRAMS = 1.988_47E+30;
 
         public SolarMass(double value) {
             super(value);
@@ -164,8 +213,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_SOLAR_MASS);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -173,7 +228,7 @@ public abstract class Mass {
      * https://en.wikipedia.org/wiki/Electronvolt
      */
     public static class Electronvolt extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_ELECTRONVOLT = 1.782_661_845E-36;
+        public final double IN_KILOGRAMS = 1.782_661_845E-36;
 
         public Electronvolt(double value) {
             super(value);
@@ -183,8 +238,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_ELECTRONVOLT);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -192,7 +253,7 @@ public abstract class Mass {
      * https://en.wikipedia.org/wiki/Electron
      */
     public static class ElectronMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_ELECTRON_MASS = 9.109_382_91E-31;
+        public final double IN_KILOGRAMS = 9.109_382_91E-31;
 
         public ElectronMass(double value) {
             super(value);
@@ -202,8 +263,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_ELECTRON_MASS);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -211,7 +278,7 @@ public abstract class Mass {
      * https://en.wikipedia.org/wiki/Proton
      */
     public static class ProtonMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_PROTON_MASS = 1.672_621_777E-27;
+        public final double IN_KILOGRAMS = 1.672_621_777E-27;
 
         public ProtonMass(double value) {
             super(value);
@@ -221,8 +288,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_PROTON_MASS);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 
@@ -230,7 +303,7 @@ public abstract class Mass {
      * https://en.wikipedia.org/wiki/Planck_mass
      */
     public static class PlanckMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_PLANCK_MASS = 2.176_51E-8;
+        public final double IN_KILOGRAMS = 2.176_51E-8;
 
         public PlanckMass(double value) {
             super(value);
@@ -240,8 +313,14 @@ public abstract class Mass {
             super(value, prefix);
         }
 
-        public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_PLANCK_MASS);
+        @Override
+        public double getValueForToSI() {
+            return this.getValue();
+        }
+
+        @Override
+        public double get_IN_KILOGRAMS() {
+            return IN_KILOGRAMS;
         }
     }
 }

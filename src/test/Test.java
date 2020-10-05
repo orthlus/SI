@@ -16,7 +16,7 @@ public class Test {
 //        double mass = new Scanner(System.in).nextDouble();
         double mass = 500.09;
         Mass.Pound m = new Mass.Pound(mass);
-        System.out.println("Объем " + mass + " фунтов бензина равен " + densityPetrol * m.toKilogram().getValue());
+        System.out.println("Объем " + mass + " фунтов бензина равен " + densityPetrol * Mass.toSI(m).getValue());
 
         Prefix prefix = Prefix.KILO;
         System.out.println(Prefix.DECA.equals(prefix));

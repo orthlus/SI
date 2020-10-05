@@ -1,5 +1,9 @@
 package ru.orthlus.si;
 
+/**
+ * интерфейс для расширения метода ToSI
+ */
 public interface AbstractMeasureToSI {
-    Mass.Kilogram toKilogram();
+    double getValueForToSI();
+    double get_IN_KILOGRAMS();
 }
