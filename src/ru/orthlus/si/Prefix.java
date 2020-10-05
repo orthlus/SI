@@ -1,5 +1,7 @@
 package ru.orthlus.si;
 
+import java.math.BigDecimal;
+
 public final class Prefix {
     private final String prefix;
 
@@ -116,4 +118,54 @@ public final class Prefix {
      */
     public final static Prefix YOCTO = new Prefix("YOCTO");
     public final static String YOCTO_MIN = "y";
+
+    double valuePowerByPrefix(double a) {
+        if (NonePrefix.equals(this)) return a;
+        else if (DECA.equals(this)) return a * 10;
+        else if (HECTO.equals(this)) return a * 100;
+        else if (KILO.equals(this)) return a * 1000;
+        else if (MEGA.equals(this)) return a * Math.pow(10, 6);
+        else if (GIGA.equals(this)) return a * Math.pow(10, 9);
+        else if (TERA.equals(this)) return a * Math.pow(10, 12);
+        else if (PETA.equals(this)) return a * Math.pow(10, 15);
+        else if (EXA.equals(this)) return a * Math.pow(10, 18);
+        else if (ZETTA.equals(this)) return a * Math.pow(10, 21);
+        else if (YOTTA.equals(this)) return a * Math.pow(10, 24);
+        else if (DECI.equals(this)) return a * Math.pow(10, -1);
+        else if (CENTI.equals(this)) return a * Math.pow(10, -2);
+        else if (MILLI.equals(this)) return a * Math.pow(10, -3);
+        else if (MICRO.equals(this)) return a * Math.pow(10, -6);
+        else if (NANO.equals(this)) return a * Math.pow(10, -9);
+        else if (PICO.equals(this)) return a * Math.pow(10, -12);
+        else if (FEMTO.equals(this)) return a * Math.pow(10, -15);
+        else if (ATTO.equals(this)) return a * Math.pow(10, -18);
+        else if (ZEPTO.equals(this)) return a * Math.pow(10, -21);
+        else if (YOCTO.equals(this)) return a * Math.pow(10, -24);
+        return a;
+    }
+
+    BigDecimal valuePowerByPrefix(BigDecimal a) {
+        if (NonePrefix.equals(this)) return a;
+        else if (DECA.equals(this)) return a.multiply(new BigDecimal(10));
+        else if (HECTO.equals(this)) return a.multiply(new BigDecimal(100));
+        else if (KILO.equals(this)) return a.multiply(new BigDecimal(1000));
+        else if (MEGA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 6)));
+        else if (GIGA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 9)));
+        else if (TERA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 12)));
+        else if (PETA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 15)));
+        else if (EXA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 18)));
+        else if (ZETTA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 21)));
+        else if (YOTTA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 24)));
+        else if (DECI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -1)));
+        else if (CENTI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -2)));
+        else if (MILLI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -3)));
+        else if (MICRO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -6)));
+        else if (NANO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -9)));
+        else if (PICO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -12)));
+        else if (FEMTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -15)));
+        else if (ATTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -18)));
+        else if (ZEPTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -21)));
+        else if (YOCTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -24)));
+        return a;
+    }
 }
