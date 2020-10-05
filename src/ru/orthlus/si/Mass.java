@@ -211,7 +211,7 @@ public abstract class Mass {
      * https://en.wikipedia.org/wiki/Proton
      */
     public static class ProtonMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double KILOGRAMS_IN_PROTONMASS = 1.672_621_777E-27;
+        public final double KILOGRAMS_IN_PROTON_MASS = 1.672_621_777E-27;
 
         public ProtonMass(double value) {
             super(value);
@@ -222,7 +222,7 @@ public abstract class Mass {
         }
 
         public Kilogram toKilogram() {
-            return new Kilogram(this.getValue() * KILOGRAMS_IN_PROTONMASS);
+            return new Kilogram(this.getValue() * KILOGRAMS_IN_PROTON_MASS);
         }
     }
 
