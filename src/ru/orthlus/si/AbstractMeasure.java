@@ -20,11 +20,13 @@ public abstract class AbstractMeasure {
         this.value = value;
         this.prefix = Prefix.NonePrefix;
     }
+
     public AbstractMeasure(double value, Prefix prefix) {
         this.value = value;
         this.prefix = prefix;
     }
-    private double valuePowerByPrefix(){
+
+    private double valuePowerByPrefix() {
         if (Prefix.NonePrefix.equals(prefix)) return value;
         else if (Prefix.DECA.equals(prefix)) return value * 10;
         else if (Prefix.HECTO.equals(prefix)) return value * 100;
@@ -47,4 +49,5 @@ public abstract class AbstractMeasure {
         else if (Prefix.ZEPTO.equals(prefix)) return value * Math.pow(10, -21);
         return value;
     }
+
 }
