@@ -8,10 +8,6 @@ public abstract class AbstractMeasure {
         return value;
     }
 
-    public AbstractMeasure() {
-        this.value = 0;
-        this.prefix = Prefix.NonePrefix;
-    }
     public AbstractMeasure(double value) {
         this.value = value;
         this.prefix = Prefix.NonePrefix;

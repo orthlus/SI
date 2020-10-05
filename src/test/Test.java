@@ -1,6 +1,7 @@
 package test;
 
 import ru.orthlus.si.Mass;
+import ru.orthlus.si.Prefix;
 
 import java.util.Scanner;
 
