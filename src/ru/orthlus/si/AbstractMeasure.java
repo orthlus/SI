@@ -6,9 +6,13 @@ public abstract class AbstractMeasure {
     private double value;
     private BigDecimal valueBigDecimal;
     private Prefix prefix;
+    public double IN_KILOGRAMS;
 
     public double getValue() {
         return valuePowerByPrefix(this.value);
+    }
+    public double get_IN_KILOGRAMS(){
+        return IN_KILOGRAMS;
     }
     public BigDecimal getValueBigDecimal() {
         return valuePowerByPrefix(this.valueBigDecimal);

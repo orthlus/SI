@@ -21,7 +21,9 @@ public abstract class Mass {
     }
 
     public static class Gram extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 0.001;
+        {
+            IN_KILOGRAMS = 0.001;
+        }
 
         public Gram(double value) {
             super(value);
@@ -30,15 +32,12 @@ public abstract class Mass {
         public Gram(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Tonne extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 1000;
+        {
+            IN_KILOGRAMS = 1000;
+        }
 
         public Tonne(double value) {
             super(value);
@@ -47,15 +46,12 @@ public abstract class Mass {
         public Tonne(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Pound extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 0.4535923745;
+        {
+            IN_KILOGRAMS = 0.4535923745;
+        }
 
         public Pound(double value) {
             super(value);
@@ -64,15 +60,12 @@ public abstract class Mass {
         public Pound(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Centner extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 100;
+        {
+            IN_KILOGRAMS = 100;
+        }
 
         public Centner(double value) {
             super(value);
@@ -81,15 +74,12 @@ public abstract class Mass {
         public Centner(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Carat extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 0.0002;
+        {
+            IN_KILOGRAMS = 0.0002;
+        }
 
         public Carat(double value) {
             super(value);
@@ -98,15 +88,12 @@ public abstract class Mass {
         public Carat(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Ounce extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 0.031_103_48;
+        {
+            IN_KILOGRAMS = 0.031_103_48;
+        }
 
         public Ounce(double value) {
             super(value);
@@ -115,15 +102,12 @@ public abstract class Mass {
         public Ounce(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     public static class Stone extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 6.350_293_18;
+        {
+            IN_KILOGRAMS = 6.350_293_18;
+        }
 
         public Stone(double value) {
             super(value);
@@ -132,18 +116,15 @@ public abstract class Mass {
         public Stone(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * unified atomic mass unit
      */
     public static class Dalton extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 1.660_539_066_60E-27;
+        {
+            IN_KILOGRAMS = 1.660_539_066_60E-27;
+        }
 
         public Dalton(double value) {
             super(value);
@@ -152,18 +133,15 @@ public abstract class Mass {
         public Dalton(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * The solar mass (M☉) is a standard unit of mass in astronomy, equal to approximately 2×1030 kg.
      */
     public static class SolarMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 1.988_47E+30;
+        {
+            IN_KILOGRAMS = 1.988_47E+30;
+        }
 
         public SolarMass(double value) {
             super(value);
@@ -172,18 +150,15 @@ public abstract class Mass {
         public SolarMass(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * https://en.wikipedia.org/wiki/Electronvolt
      */
     public static class Electronvolt extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 1.782_661_845E-36;
+        {
+            IN_KILOGRAMS = 1.782_661_845E-36;
+        }
 
         public Electronvolt(double value) {
             super(value);
@@ -192,18 +167,15 @@ public abstract class Mass {
         public Electronvolt(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * https://en.wikipedia.org/wiki/Electron
      */
     public static class ElectronMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 9.109_382_91E-31;
+        {
+            IN_KILOGRAMS = 9.109_382_91E-31;
+        }
 
         public ElectronMass(double value) {
             super(value);
@@ -212,18 +184,15 @@ public abstract class Mass {
         public ElectronMass(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * https://en.wikipedia.org/wiki/Proton
      */
     public static class ProtonMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 1.672_621_777E-27;
+        {
+            IN_KILOGRAMS = 1.672_621_777E-27;
+        }
 
         public ProtonMass(double value) {
             super(value);
@@ -232,18 +201,15 @@ public abstract class Mass {
         public ProtonMass(double value, Prefix prefix) {
             super(value, prefix);
         }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
-        }
     }
 
     /**
      * https://en.wikipedia.org/wiki/Planck_mass
      */
     public static class PlanckMass extends AbstractMeasure implements AbstractMeasureToSI {
-        public final double IN_KILOGRAMS = 2.176_51E-8;
+        {
+            IN_KILOGRAMS = 2.176_51E-8;
+        }
 
         public PlanckMass(double value) {
             super(value);
@@ -251,11 +217,6 @@ public abstract class Mass {
 
         public PlanckMass(double value, Prefix prefix) {
             super(value, prefix);
-        }
-
-        @Override
-        public double get_IN_KILOGRAMS() {
-            return IN_KILOGRAMS;
         }
     }
 }
