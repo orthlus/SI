@@ -110,8 +110,4 @@ public final class Prefix {
     double valuePowerByPrefix(double a) {
         return a * Math.pow(10, this.exponent);
     }
-
-    BigDecimal valuePowerByPrefix(BigDecimal a) {
-        return a.multiply(BigDecimal.valueOf(Math.pow(10, this.exponent)));
-    }
 }
