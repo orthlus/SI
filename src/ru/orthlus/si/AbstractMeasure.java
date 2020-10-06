@@ -4,7 +4,7 @@ package ru.orthlus.si;
 public abstract class AbstractMeasure {
     private double value;
     private Prefix prefix;
-    public double IN_KILOGRAMS;
+    protected double IN_KILOGRAMS;
 
     public double getValue() {
         return prefix.valuePowerByPrefix(this.value);

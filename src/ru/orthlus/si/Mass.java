@@ -5,11 +5,17 @@ package ru.orthlus.si;
  * Library for transformation operations in International System of Units
  */
 public abstract class Mass {
-    public static Kilogram toSI(AbstractMeasureToSI a) {
-        return new Kilogram(a.getValue() * a.get_IN_KILOGRAMS());
+    public static Kilogram toSI(AbstractMeasure a) {
+        if (a instanceof Kilogram)
+            return (Kilogram) a;
+        return new Kilogram(a.getValue() * a.IN_KILOGRAMS);
     }
 
     public static class Kilogram extends AbstractMeasure {
+        {
+            IN_KILOGRAMS = 1;
+        }
+
         public Kilogram(double value) {
             super(value, Prefix.KILO);
         }
@@ -20,7 +26,7 @@ public abstract class Mass {
         */
     }
 
-    public static class Gram extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Gram extends AbstractMeasure {
         {
             IN_KILOGRAMS = 0.001;
         }
@@ -34,7 +40,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Tonne extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Tonne extends AbstractMeasure {
         {
             IN_KILOGRAMS = 1000;
         }
@@ -48,7 +54,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Pound extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Pound extends AbstractMeasure {
         {
             IN_KILOGRAMS = 0.4535923745;
         }
@@ -62,7 +68,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Centner extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Centner extends AbstractMeasure {
         {
             IN_KILOGRAMS = 100;
         }
@@ -76,7 +82,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Carat extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Carat extends AbstractMeasure {
         {
             IN_KILOGRAMS = 0.0002;
         }
@@ -90,7 +96,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Ounce extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Ounce extends AbstractMeasure {
         {
             IN_KILOGRAMS = 0.031_103_48;
         }
@@ -104,7 +110,7 @@ public abstract class Mass {
         }
     }
 
-    public static class Stone extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Stone extends AbstractMeasure {
         {
             IN_KILOGRAMS = 6.350_293_18;
         }
@@ -121,7 +127,7 @@ public abstract class Mass {
     /**
      * unified atomic mass unit
      */
-    public static class Dalton extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Dalton extends AbstractMeasure {
         {
             IN_KILOGRAMS = 1.660_539_066_60E-27;
         }
@@ -138,7 +144,7 @@ public abstract class Mass {
     /**
      * The solar mass (M☉) is a standard unit of mass in astronomy, equal to approximately 2×1030 kg.
      */
-    public static class SolarMass extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class SolarMass extends AbstractMeasure {
         {
             IN_KILOGRAMS = 1.988_47E+30;
         }
@@ -155,7 +161,7 @@ public abstract class Mass {
     /**
      * https://en.wikipedia.org/wiki/Electronvolt
      */
-    public static class Electronvolt extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class Electronvolt extends AbstractMeasure {
         {
             IN_KILOGRAMS = 1.782_661_845E-36;
         }
@@ -172,7 +178,7 @@ public abstract class Mass {
     /**
      * https://en.wikipedia.org/wiki/Electron
      */
-    public static class ElectronMass extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class ElectronMass extends AbstractMeasure {
         {
             IN_KILOGRAMS = 9.109_382_91E-31;
         }
@@ -189,7 +195,7 @@ public abstract class Mass {
     /**
      * https://en.wikipedia.org/wiki/Proton
      */
-    public static class ProtonMass extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class ProtonMass extends AbstractMeasure {
         {
             IN_KILOGRAMS = 1.672_621_777E-27;
         }
@@ -206,7 +212,7 @@ public abstract class Mass {
     /**
      * https://en.wikipedia.org/wiki/Planck_mass
      */
-    public static class PlanckMass extends AbstractMeasure implements AbstractMeasureToSI {
+    public static class PlanckMass extends AbstractMeasure {
         {
             IN_KILOGRAMS = 2.176_51E-8;
         }
