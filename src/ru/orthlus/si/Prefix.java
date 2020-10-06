@@ -4,11 +4,19 @@ import java.math.BigDecimal;
 
 public final class Prefix {
     private final String prefix;
+    private double exponent;
 
-    public Prefix(String prefix) {
+    public Prefix(String prefix, double exponent) {
         this.prefix = prefix;
+        this.exponent = exponent;
     }
 
+    /**
+     * @return Symbol Prefix<br>
+     * 'k' for Kilo <br>
+     * 'M' for Mega <br>
+     * 'm' for Milli
+     */
     @Override
     public String toString() {
         return this.prefix;
@@ -17,155 +25,93 @@ public final class Prefix {
     /**
      * 10 ^ 0
      */
-    public final static Prefix NonePrefix = new Prefix("NonePrefix");
+    public final static Prefix NonePrefix = new Prefix("", 0);
     /**
      * 10 ^ 1
      */
-    public final static Prefix DECA = new Prefix("DECA");
-    public final static String DECA_MIN = "da";
+    public final static Prefix DECA = new Prefix("da", 1);
     /**
      * 10 ^ 2
      */
-    public final static Prefix HECTO = new Prefix("HECTO");
-    public final static String HECTO_MIN = "h";
+    public final static Prefix HECTO = new Prefix("h", 2);
     /**
      * 10 ^ 3
      */
-    public final static Prefix KILO = new Prefix("KILO");
-    public final static String KILO_MIN = "k";
+    public final static Prefix KILO = new Prefix("k", 3);
     /**
      * 10 ^ 6
      */
-    public final static Prefix MEGA = new Prefix("MEGA");
-    public final static String MEGA_MIN = "M";
+    public final static Prefix MEGA = new Prefix("M", 6);
     /**
      * 10 ^ 9
      */
-    public final static Prefix GIGA = new Prefix("GIGA");
-    public final static String GIGA_MIN = "G";
+    public final static Prefix GIGA = new Prefix("G", 9);
     /**
      * 10 ^ 12
      */
-    public final static Prefix TERA = new Prefix("TERA");
-    public final static String TERA_MIN = "T";
+    public final static Prefix TERA = new Prefix("T", 12);
     /**
      * 10 ^ 15
      */
-    public final static Prefix PETA = new Prefix("PETA");
-    public final static String PETA_MIN = "P";
+    public final static Prefix PETA = new Prefix("P", 15);
     /**
      * 10 ^ 18
      */
-    public final static Prefix EXA = new Prefix("EXA");
-    public final static String EXA_MIN = "E";
+    public final static Prefix EXA = new Prefix("E", 18);
     /**
      * 10 ^ 21
      */
-    public final static Prefix ZETTA = new Prefix("ZETTA");
-    public final static String ZETTA_MIN = "Z";
+    public final static Prefix ZETTA = new Prefix("Z", 21);
     /**
      * 10 ^ 24
      */
-    public final static Prefix YOTTA = new Prefix("YOTTA");
-    public final static String YOTTA_MIN = "Y";
+    public final static Prefix YOTTA = new Prefix("Y", 24);
     /**
      * 10 ^ −1
      */
-    public final static Prefix DECI = new Prefix("DECI");
-    public final static String DECI_MIN = "d";
+    public final static Prefix DECI = new Prefix("d", -1);
     /**
      * 10 ^ −2
      */
-    public final static Prefix CENTI = new Prefix("CENTI");
-    public final static String CENTI_MIN = "c";
+    public final static Prefix CENTI = new Prefix("c", -2);
     /**
      * 10 ^ −3
      */
-    public final static Prefix MILLI = new Prefix("MILLI");
-    public final static String MILLI_MIN = "m";
+    public final static Prefix MILLI = new Prefix("m", -3);
     /**
      * 10 ^ −6
      */
-    public final static Prefix MICRO = new Prefix("MICRO");
-    public final static String MICRO_MIN = "µ";
+    public final static Prefix MICRO = new Prefix("µ", -6);
     /**
      * 10 ^ −9
      */
-    public final static Prefix NANO = new Prefix("NANO");
-    public final static String NANO_MIN = "n";
+    public final static Prefix NANO = new Prefix("n", -9);
     /**
      * 10 ^ −12
      */
-    public final static Prefix PICO = new Prefix("PICO");
-    public final static String PICO_MIN = "p";
+    public final static Prefix PICO = new Prefix("p", -12);
     /**
      * 10 ^ −15
      */
-    public final static Prefix FEMTO = new Prefix("FEMTO");
-    public final static String FEMTO_MIN = "f";
+    public final static Prefix FEMTO = new Prefix("f", -15);
     /**
      * 10 ^ −18
      */
-    public final static Prefix ATTO = new Prefix("ATTO");
-    public final static String ATTO_MIN = "a";
+    public final static Prefix ATTO = new Prefix("a", -18);
     /**
      * 10 ^ −21
      */
-    public final static Prefix ZEPTO = new Prefix("ZEPTO");
-    public final static String ZEPTO_MIN = "z";
+    public final static Prefix ZEPTO = new Prefix("z", -21);
     /**
      * 10 ^ −24
      */
-    public final static Prefix YOCTO = new Prefix("YOCTO");
-    public final static String YOCTO_MIN = "y";
+    public final static Prefix YOCTO = new Prefix("y", -24);
 
     double valuePowerByPrefix(double a) {
-        if (NonePrefix.equals(this)) return a;
-        else if (DECA.equals(this)) return a * 10;
-        else if (HECTO.equals(this)) return a * 100;
-        else if (KILO.equals(this)) return a * 1000;
-        else if (MEGA.equals(this)) return a * Math.pow(10, 6);
-        else if (GIGA.equals(this)) return a * Math.pow(10, 9);
-        else if (TERA.equals(this)) return a * Math.pow(10, 12);
-        else if (PETA.equals(this)) return a * Math.pow(10, 15);
-        else if (EXA.equals(this)) return a * Math.pow(10, 18);
-        else if (ZETTA.equals(this)) return a * Math.pow(10, 21);
-        else if (YOTTA.equals(this)) return a * Math.pow(10, 24);
-        else if (DECI.equals(this)) return a * Math.pow(10, -1);
-        else if (CENTI.equals(this)) return a * Math.pow(10, -2);
-        else if (MILLI.equals(this)) return a * Math.pow(10, -3);
-        else if (MICRO.equals(this)) return a * Math.pow(10, -6);
-        else if (NANO.equals(this)) return a * Math.pow(10, -9);
-        else if (PICO.equals(this)) return a * Math.pow(10, -12);
-        else if (FEMTO.equals(this)) return a * Math.pow(10, -15);
-        else if (ATTO.equals(this)) return a * Math.pow(10, -18);
-        else if (ZEPTO.equals(this)) return a * Math.pow(10, -21);
-        else if (YOCTO.equals(this)) return a * Math.pow(10, -24);
-        return a;
+        return a * Math.pow(10, this.exponent);
     }
 
     BigDecimal valuePowerByPrefix(BigDecimal a) {
-        if (NonePrefix.equals(this)) return a;
-        else if (DECA.equals(this)) return a.multiply(new BigDecimal(10));
-        else if (HECTO.equals(this)) return a.multiply(new BigDecimal(100));
-        else if (KILO.equals(this)) return a.multiply(new BigDecimal(1000));
-        else if (MEGA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 6)));
-        else if (GIGA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 9)));
-        else if (TERA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 12)));
-        else if (PETA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 15)));
-        else if (EXA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 18)));
-        else if (ZETTA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 21)));
-        else if (YOTTA.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, 24)));
-        else if (DECI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -1)));
-        else if (CENTI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -2)));
-        else if (MILLI.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -3)));
-        else if (MICRO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -6)));
-        else if (NANO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -9)));
-        else if (PICO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -12)));
-        else if (FEMTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -15)));
-        else if (ATTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -18)));
-        else if (ZEPTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -21)));
-        else if (YOCTO.equals(this)) return a.multiply(BigDecimal.valueOf(Math.pow(10, -24)));
-        return a;
+        return a.multiply(BigDecimal.valueOf(Math.pow(10, this.exponent)));
     }
 }
