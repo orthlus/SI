@@ -1,6 +1,5 @@
 package ru.orthlus.si;
 
-import java.math.BigDecimal;
 
 public abstract class AbstractMeasure {
     private double value;
@@ -10,7 +9,8 @@ public abstract class AbstractMeasure {
     public double getValue() {
         return prefix.valuePowerByPrefix(this.value);
     }
-    public double get_IN_KILOGRAMS(){
+
+    public double get_IN_KILOGRAMS() {
         return IN_KILOGRAMS;
     }
 

@@ -1,7 +1,5 @@
 package ru.orthlus.si;
 
-import java.math.BigDecimal;
-
 public final class Prefix {
     private final String prefix;
     private double exponent;
@@ -9,6 +7,10 @@ public final class Prefix {
     public Prefix(String prefix, double exponent) {
         this.prefix = prefix;
         this.exponent = exponent;
+    }
+
+    double valuePowerByPrefix(double a) {
+        return a * Math.pow(10, this.exponent);
     }
 
     /**
@@ -106,8 +108,4 @@ public final class Prefix {
      * 10 ^ −24
      */
     public final static Prefix YOCTO = new Prefix("y", -24);
-
-    double valuePowerByPrefix(double a) {
-        return a * Math.pow(10, this.exponent);
-    }
 }
