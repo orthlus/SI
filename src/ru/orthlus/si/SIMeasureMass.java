@@ -1,6 +1,6 @@
 package ru.orthlus.si;
 
-public class SIMeasureMass extends SIMeasure {
+public abstract class SIMeasureMass extends Measure {
     public SIMeasureMass(double value) {
         super(value);
     }
@@ -9,8 +9,4 @@ public class SIMeasureMass extends SIMeasure {
         super(value, prefix);
     }
 
-    @Override
-    public SIMeasure toSI(Measure measure) {
-        return null;
-    }
 }

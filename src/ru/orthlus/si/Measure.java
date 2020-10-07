@@ -16,4 +16,8 @@ public abstract class Measure {
         this.value = value;
         this.prefix = Prefix.NonePrefix;
     }
+
+    public double getValue() {
+        return value;
+    }
 }

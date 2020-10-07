@@ -1,6 +1,7 @@
 package test;
 
 import ru.orthlus.si.Mass;
+import ru.orthlus.si.NewMass;
 import ru.orthlus.si.Prefix;
 
 import java.util.Scanner;
@@ -17,6 +18,9 @@ public class Test {
         double mass = 500.09;
         Mass.Pound m = new Mass.Pound(mass);
         System.out.println("Объем " + mass + " фунтов бензина равен " + densityPetrol * Mass.toSI(m).getValue());
+
+        NewMass.Carat mc = new NewMass.Carat(mass);
+        System.out.println("Объем " + mass + " каратт бензина равен " + densityPetrol * mc.toSI().getValue());
 
         Prefix prefix = Prefix.KILO;
         System.out.println(Prefix.DECA.equals(prefix));

@@ -1,6 +1,7 @@
 package ru.orthlus.si;
 
-public class NotSIMeasureMass extends NotSIMeasure {
+public abstract class NotSIMeasureMass extends Measure {
+    protected double IN_KILOGRAMS;
     public NotSIMeasureMass(double value) {
         super(value);
     }
@@ -9,8 +10,7 @@ public class NotSIMeasureMass extends NotSIMeasure {
         super(value, prefix);
     }
 
-    @Override
-    public SIMeasure toSI(Measure measure) {
-        return null;
+    public NewMass.Kilogram toSI() {
+        return new NewMass.Kilogram(this.getValue() * this.IN_KILOGRAMS);
     }
 }
