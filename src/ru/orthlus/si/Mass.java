@@ -6,8 +6,11 @@ package ru.orthlus.si;
  */
 public abstract class Mass {
     public static class Kilogram extends SIMeasureMass {
+        {
+            min = "kg";
+        }
         public Kilogram(double value) {
-            super(value, Prefix.KILO);
+            super(value);
         }
 
         /*
@@ -19,9 +22,9 @@ public abstract class Mass {
     public static class Gram extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 0.001;
+            min = "g";
         }
 
-        public final String min = "g";
 
         public Gram(double value) {
             super(value);
@@ -35,9 +38,9 @@ public abstract class Mass {
     public static class Tonne extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 1000;
+            min = "t";
         }
 
-        public final String min = "t";
 
         public Tonne(double value) {
             super(value);
@@ -47,9 +50,9 @@ public abstract class Mass {
     public static class Centner extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 100;
+            min = "centner";
         }
 
-        public final String min = "centner";
 
         public Centner(double value) {
             super(value);
@@ -59,9 +62,9 @@ public abstract class Mass {
     public static class Pound extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 0.4535923745;
+            min = "lb";
         }
 
-        public final String min = "lb";
 
         public Pound(double value) {
             super(value);
@@ -76,9 +79,9 @@ public abstract class Mass {
     public static class Carat extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 0.0002;
+            min = "ct";
         }
 
-        public final String min = "ct";
 
         public Carat(double value) {
             super(value);
@@ -95,9 +98,9 @@ public abstract class Mass {
     public static class Ounce extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 0.031_103_48;
+            min = "t oz";
         }
 
-        public final String min = "t oz";
 
         public Ounce(double value) {
             super(value);
@@ -111,9 +114,9 @@ public abstract class Mass {
     public static class Stone extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 6.350_293_18;
+            min = "st";
         }
 
-        public final String min = "st";
 
         public Stone(double value) {
             super(value);
@@ -130,9 +133,9 @@ public abstract class Mass {
     public static class Dalton extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 1.660_539_066_60E-27;
+            min = "Da";
         }
 
-        public final String min = "Da";
 
         public Dalton(double value) {
             super(value);
@@ -149,9 +152,9 @@ public abstract class Mass {
     public static class SolarMass extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 1.988_47E+30;
+            min = "M☉";
         }
 
-        public final String min = "M☉";
 
         public SolarMass(double value) {
             super(value);
@@ -168,9 +171,9 @@ public abstract class Mass {
     public static class Electronvolt extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 1.782_661_845E-36;
+            min = "eV";
         }
 
-        public final String min = "eV";
 
         public Electronvolt(double value) {
             super(value);
@@ -187,9 +190,9 @@ public abstract class Mass {
     public static class ElectronMass extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 9.109_382_91E-31;
+            min = "m_electron";
         }
 
-        public final String min = "m_electron";
 
         public ElectronMass(double value) {
             super(value);
@@ -206,9 +209,9 @@ public abstract class Mass {
     public static class ProtonMass extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 1.672_621_777E-27;
+            min = "m_proton";
         }
 
-        public final String min = "m_proton";
 
         public ProtonMass(double value) {
             super(value);
@@ -225,9 +228,9 @@ public abstract class Mass {
     public static class PlanckMass extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 2.176_51E-8;
+            min = "m_Planck";
         }
 
-        public final String min = "m_Planck";
 
         public PlanckMass(double value) {
             super(value);
