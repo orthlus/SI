@@ -1,7 +1,7 @@
 package ru.orthlus.si;
 
 
-public abstract class AbstractMeasure {
+public abstract class OldAbstractMeasure {
     private double value;
     private Prefix prefix;
     protected double IN_KILOGRAMS;
@@ -22,12 +22,12 @@ public abstract class AbstractMeasure {
         this.prefix = prefix;
     }
 
-    public AbstractMeasure(double value) {
+    public OldAbstractMeasure(double value) {
         this.value = value;
         this.prefix = Prefix.NonePrefix;
     }
 
-    public AbstractMeasure(double value, Prefix prefix) {
+    public OldAbstractMeasure(double value, Prefix prefix) {
         this.value = value;
         this.prefix = prefix;
     }

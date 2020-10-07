@@ -1,7 +1,7 @@
 package ru.orthlus.si;
 
 public class Time {
-    public static class MilliSecond extends AbstractMeasure {
+    public static class MilliSecond extends OldAbstractMeasure {
         private long value;
 
         public MilliSecond(long value) {
@@ -9,7 +9,7 @@ public class Time {
         }
     }
 
-    public static class Second extends AbstractMeasure {
+    public static class Second extends OldAbstractMeasure {
         private long value;
         public final int MILLISECONDS_IN_SECOND = 1000;
 
@@ -18,7 +18,7 @@ public class Time {
         }
     }
 
-    public static class Minute extends AbstractMeasure {
+    public static class Minute extends OldAbstractMeasure {
         private long value;
         public final int SECONDS_IN_MINUTE = 60;
 
@@ -27,7 +27,7 @@ public class Time {
         }
     }
 
-    public static class Hour extends AbstractMeasure {
+    public static class Hour extends OldAbstractMeasure {
         private long value;
         public final int MINUTES_IN_HOUR = 60;
 
@@ -36,7 +36,7 @@ public class Time {
         }
     }
 
-    public static class Day extends AbstractMeasure {
+    public static class Day extends OldAbstractMeasure {
         private long value;
         public final int HOURS_IN_DAY = 24;
 
@@ -45,7 +45,7 @@ public class Time {
         }
     }
 
-    public static class Week extends AbstractMeasure {
+    public static class Week extends OldAbstractMeasure {
         private long value;
         public final int DAYS_IN_WEEK = 7;
 

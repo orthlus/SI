@@ -10,7 +10,7 @@ public abstract class NotSIMeasureMass extends Measure {
         super(value, prefix);
     }
 
-    public NewMass.Kilogram toSI() {
-        return new NewMass.Kilogram(this.getValue() * this.IN_KILOGRAMS);
+    public Mass.Kilogram toSI() {
+        return new Mass.Kilogram(this.getValue() * this.IN_KILOGRAMS);
     }
 }

@@ -4,8 +4,18 @@ package ru.orthlus.si;
 /**
  * Library for transformation operations in International System of Units
  */
-public abstract class NewMass {
-    public static class Kilogram extends SIMeasureMass {
+public abstract class OldMass {
+    public static Kilogram toSI(OldAbstractMeasure a) {
+        if (a instanceof Kilogram)
+            return (Kilogram) a;
+        return new Kilogram(a.getValue() * a.IN_KILOGRAMS);
+    }
+
+    public static class Kilogram extends OldAbstractMeasure {
+        {
+            IN_KILOGRAMS = 1;
+        }
+
         public Kilogram(double value) {
             super(value, Prefix.KILO);
         }
@@ -16,11 +26,10 @@ public abstract class NewMass {
         */
     }
 
-    public static class Gram extends NotSIMeasureMass {
+    public static class Gram extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 0.001;
         }
-        public final String min = "g";
 
         public Gram(double value) {
             super(value);
@@ -31,11 +40,10 @@ public abstract class NewMass {
         }
     }
 
-    public static class Tonne extends NotSIMeasureMass {
+    public static class Tonne extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 1000;
         }
-        public final String min = "t";
 
         public Tonne(double value) {
             super(value);
@@ -46,11 +54,10 @@ public abstract class NewMass {
         }
     }
 
-    public static class Pound extends NotSIMeasureMass {
+    public static class Pound extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 0.4535923745;
         }
-        public final String min = "lb";
 
         public Pound(double value) {
             super(value);
@@ -61,11 +68,10 @@ public abstract class NewMass {
         }
     }
 
-    public static class Centner extends NotSIMeasureMass {
+    public static class Centner extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 100;
         }
-        public final String min = "centner";
 
         public Centner(double value) {
             super(value);
@@ -76,11 +82,10 @@ public abstract class NewMass {
         }
     }
 
-    public static class Carat extends NotSIMeasureMass {
+    public static class Carat extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 0.0002;
         }
-        public final String min = "ct";
 
         public Carat(double value) {
             super(value);
@@ -91,14 +96,10 @@ public abstract class NewMass {
         }
     }
 
-    /**
-     * https://en.wikipedia.org/wiki/Troy_weight
-     */
-    public static class Ounce extends NotSIMeasureMass {
+    public static class Ounce extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 0.031_103_48;
         }
-        public final String min = "t oz";
 
         public Ounce(double value) {
             super(value);
@@ -109,11 +110,10 @@ public abstract class NewMass {
         }
     }
 
-    public static class Stone extends NotSIMeasureMass {
+    public static class Stone extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 6.350_293_18;
         }
-        public final String min = "st";
 
         public Stone(double value) {
             super(value);
@@ -127,11 +127,10 @@ public abstract class NewMass {
     /**
      * unified atomic mass unit
      */
-    public static class Dalton extends NotSIMeasureMass {
+    public static class Dalton extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 1.660_539_066_60E-27;
         }
-        public final String min = "Da";
 
         public Dalton(double value) {
             super(value);
@@ -145,11 +144,10 @@ public abstract class NewMass {
     /**
      * The solar mass (M☉) is a standard unit of mass in astronomy, equal to approximately 2×1030 kg.
      */
-    public static class SolarMass extends NotSIMeasureMass {
+    public static class SolarMass extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 1.988_47E+30;
         }
-        public final String min = "M☉";
 
         public SolarMass(double value) {
             super(value);
@@ -163,11 +161,10 @@ public abstract class NewMass {
     /**
      * https://en.wikipedia.org/wiki/Electronvolt
      */
-    public static class Electronvolt extends NotSIMeasureMass {
+    public static class Electronvolt extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 1.782_661_845E-36;
         }
-        public final String min = "eV";
 
         public Electronvolt(double value) {
             super(value);
@@ -181,11 +178,10 @@ public abstract class NewMass {
     /**
      * https://en.wikipedia.org/wiki/Electron
      */
-    public static class ElectronMass extends NotSIMeasureMass {
+    public static class ElectronMass extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 9.109_382_91E-31;
         }
-        public final String min = "m_electron";
 
         public ElectronMass(double value) {
             super(value);
@@ -199,11 +195,10 @@ public abstract class NewMass {
     /**
      * https://en.wikipedia.org/wiki/Proton
      */
-    public static class ProtonMass extends NotSIMeasureMass {
+    public static class ProtonMass extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 1.672_621_777E-27;
         }
-        public final String min = "m_proton";
 
         public ProtonMass(double value) {
             super(value);
@@ -217,11 +212,10 @@ public abstract class NewMass {
     /**
      * https://en.wikipedia.org/wiki/Planck_mass
      */
-    public static class PlanckMass extends NotSIMeasureMass {
+    public static class PlanckMass extends OldAbstractMeasure {
         {
             IN_KILOGRAMS = 2.176_51E-8;
         }
-        public final String min = "m_Planck";
 
         public PlanckMass(double value) {
             super(value);
