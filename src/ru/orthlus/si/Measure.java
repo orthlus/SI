@@ -3,7 +3,7 @@ package ru.orthlus.si;
 public abstract class Measure {
     protected double value;
     protected Prefix prefix;
-
+    protected String min;
     public Measure(double value, Prefix prefix) {
         this.value = value;
         this.prefix = prefix;
@@ -18,6 +18,15 @@ public abstract class Measure {
     }
 
     public double getValue() {
-        return value;
+        return prefix.valuePowerByPrefix(value);
+    }
+
+    @Override
+    public String toString() {
+        return
+                this.getValue()
+                + this.prefix.toString().length() == 0?"":" "
+                + this.prefix.toString()
+                + this.min;
     }
 }

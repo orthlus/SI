@@ -23,5 +23,11 @@ public class Test {
         Prefix prefix = Prefix.KILO;
         System.out.println(Prefix.DECA.equals(prefix));
 
+        System.out.println();
+        System.out.println();
+        double gram = 2000;
+        Mass.Gram gram1 = new Mass.Gram(gram);
+        System.out.println(gram1);
+        System.out.println(new Mass.Kilogram(gram1.toSI().getValue()));
     }
 }
