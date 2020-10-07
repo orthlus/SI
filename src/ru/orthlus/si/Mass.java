@@ -20,6 +20,7 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 0.001;
         }
+
         public final String min = "g";
 
         public Gram(double value) {
@@ -35,29 +36,11 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 1000;
         }
+
         public final String min = "t";
 
         public Tonne(double value) {
             super(value);
-        }
-
-        public Tonne(double value, Prefix prefix) {
-            super(value, prefix);
-        }
-    }
-
-    public static class Pound extends NotSIMeasureMass {
-        {
-            IN_KILOGRAMS = 0.4535923745;
-        }
-        public final String min = "lb";
-
-        public Pound(double value) {
-            super(value);
-        }
-
-        public Pound(double value, Prefix prefix) {
-            super(value, prefix);
         }
     }
 
@@ -65,28 +48,43 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 100;
         }
+
         public final String min = "centner";
 
         public Centner(double value) {
             super(value);
         }
+    }
 
-        public Centner(double value, Prefix prefix) {
+    public static class Pound extends NotSIMeasureMass {
+        {
+            IN_KILOGRAMS = 0.4535923745;
+        }
+
+        public final String min = "lb";
+
+        public Pound(double value) {
+            super(value);
+        }
+
+        private Pound(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
+
 
     public static class Carat extends NotSIMeasureMass {
         {
             IN_KILOGRAMS = 0.0002;
         }
+
         public final String min = "ct";
 
         public Carat(double value) {
             super(value);
         }
 
-        public Carat(double value, Prefix prefix) {
+        private Carat(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -98,13 +96,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 0.031_103_48;
         }
+
         public final String min = "t oz";
 
         public Ounce(double value) {
             super(value);
         }
 
-        public Ounce(double value, Prefix prefix) {
+        private Ounce(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -113,13 +112,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 6.350_293_18;
         }
+
         public final String min = "st";
 
         public Stone(double value) {
             super(value);
         }
 
-        public Stone(double value, Prefix prefix) {
+        private Stone(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -131,13 +131,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 1.660_539_066_60E-27;
         }
+
         public final String min = "Da";
 
         public Dalton(double value) {
             super(value);
         }
 
-        public Dalton(double value, Prefix prefix) {
+        private Dalton(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -149,13 +150,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 1.988_47E+30;
         }
+
         public final String min = "M☉";
 
         public SolarMass(double value) {
             super(value);
         }
 
-        public SolarMass(double value, Prefix prefix) {
+        private SolarMass(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -167,13 +169,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 1.782_661_845E-36;
         }
+
         public final String min = "eV";
 
         public Electronvolt(double value) {
             super(value);
         }
 
-        public Electronvolt(double value, Prefix prefix) {
+        private Electronvolt(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -185,13 +188,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 9.109_382_91E-31;
         }
+
         public final String min = "m_electron";
 
         public ElectronMass(double value) {
             super(value);
         }
 
-        public ElectronMass(double value, Prefix prefix) {
+        private ElectronMass(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -203,13 +207,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 1.672_621_777E-27;
         }
+
         public final String min = "m_proton";
 
         public ProtonMass(double value) {
             super(value);
         }
 
-        public ProtonMass(double value, Prefix prefix) {
+        private ProtonMass(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
@@ -221,13 +226,14 @@ public abstract class Mass {
         {
             IN_KILOGRAMS = 2.176_51E-8;
         }
+
         public final String min = "m_Planck";
 
         public PlanckMass(double value) {
             super(value);
         }
 
-        public PlanckMass(double value, Prefix prefix) {
+        private PlanckMass(double value, Prefix prefix) {
             super(value, prefix);
         }
     }
