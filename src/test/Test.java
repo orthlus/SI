@@ -1,8 +1,10 @@
 package test;
 
 import ru.orthlus.si.OldMass;
-import ru.orthlus.si.Mass;
-import ru.orthlus.si.Prefix;
+//import ru.orthlus.si.Prefix;
+//import ru.orthlus.si.Mass;
+import ru.orthlus.siwithoutprefix.Prefix;
+import ru.orthlus.siwithoutprefix.Mass;
 
 /**
  * калькулятор - вычислить объем вещества (бензина) по массе в фунтах
@@ -24,10 +26,10 @@ public class Test {
         System.out.println(Prefix.DECA.equals(prefix));
 
         System.out.println();
-        System.out.println();
-        double gram = 2000;
-        Mass.Gram gram1 = new Mass.Gram(gram);
-        System.out.println(gram1);
-        System.out.println(new Mass.Kilogram(gram1.toSI().getValue()));
+
+        Mass.Gram gram = new Mass.Gram(2000);
+        System.out.println(gram);
+        System.out.println(gram.toSI());
+        System.out.println(Prefix.toPrefix(gram.getValue(), Prefix.MEGA));
     }
 }
