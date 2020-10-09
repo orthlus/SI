@@ -25,7 +25,7 @@ public abstract class Measure {
     public String toString() {
         return
                 this.getValue()
-                + this.prefix.toString().length() == 0?"":" "
+                + " "
                 + this.prefix.toString()
                 + this.min;
     }
